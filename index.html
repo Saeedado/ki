@@ -26,7 +26,11 @@
             <img src="code.jpeg" alt="Picture of code"/>
         </div>
 
-        <div id="anuImage">
+        <div id="anuVideo">
+            <video id="anuVideo" controls>
+                <source src="anuVideo.mp4" type="video/mp4">
+                Your broswer does not support mp4 videos
+            </video>
             <img src="anu.jpeg" alt="Picture of code"/>
         </div>
 
@@ -34,7 +38,7 @@
             window.onload = function(){
                 setTimeout(function(){
                     document.getElementById('codeImage').style.display = 'none';
-                    document.getElementById('anuImage').style.display = 'block';
+                    document.getElementById('anuVideo').style.display = 'block';
                 }, 3000);
             };
         </script>
