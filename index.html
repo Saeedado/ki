@@ -27,15 +27,14 @@
         </div>
 
         <div id="anuVideo">
-            <video id="anuVideo" controls>
-                <source src="anuVideo.mp4" type="video/mp4">
-                Your broswer does not support mp4 videos
-            </video>
-            <img src="anu.jpeg" alt="Picture of code"/>
+            <img src="anuVideo.gif" alt="Picture of code"/>
         </div>
 
         <script>
             window.onload = function(){
+                setTimeout(function(){
+                    document.getElementById('anuVideo').style.display = 'none';
+                }, 0);
                 setTimeout(function(){
                     document.getElementById('codeImage').style.display = 'none';
                     document.getElementById('anuVideo').style.display = 'block';
