@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Anu Transformation Kiki</title>
+        <style>
+            .hidden {
+                display: none;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="codeImage">
+            <img src="code.jpeg" alt="Picture of code"/>
+        </div>
+
+        <div id="anuImage">
+            <img src="anu.jpeg" alt="Picture of code"/>
+        </div>
+
+        <script>
+            window.onload = function(){
+                setTimeout(function(){
+                    document.getElementById('codeImage').style.display = 'none';
+                    document.getElementById('anuImage').style.display = 'block';
+                }, 3000);
+            };
+        </script>
+    </body>
+
+</html>
