@@ -18,20 +18,23 @@
             }
             
 
-            .hidden {
-                display: none;
-            }
+    /* CSS to hide the div by default */
+    .anuVideo {
+      display: none;
+    }
         </style>
     </head>
 
     <body>
 
-        <div id="anuVideo">
-            <img src="anuVideo.gif" alt="Picture of code"/>
-        </div>
+
 
         <div id="text-container">
 
+        </div>
+
+        <div id="anuVideo">
+            <img src="anuVideo.gif" alt="Picture of code"/>
         </div>
 
         <script>
@@ -133,6 +136,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   displayText();
 });
+
+setTimeout(function(){
+                    document.getElementById('codeImage').style.display = 'none';
+                    document.getElementById('anuVideo').style.display = 'block';
+                }, 3000);
         </script>
     </body>
 
