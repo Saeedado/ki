@@ -8,6 +8,7 @@
                 padding: 0;
                 height: 100%;
                 background-color: black;
+                color: green;
             }
 
             img{
@@ -23,23 +24,116 @@
     </head>
 
     <body>
-        <div id="codeImage">
-            <img src="code.jpeg" alt="Picture of code"/>
-        </div>
 
         <div id="anuVideo">
             <img src="anuVideo.gif" alt="Picture of code"/>
         </div>
 
+        <div id="text-container">
+
+        </div>
+
         <script>
+document.addEventListener('DOMContentLoaded', function () {
+  const textContainer = document.getElementById('text-container');
+  var lines = [
+  'const fetchData = async () => {',
+  '  try {',
+  '    const response = await fetch("https://api.example.com/data");',
+  '    const data = await response.json();',
+  '    console.log("Fetched Data:", data);',
+  '  } catch (error) {',
+  '    console.error("Error fetching data:", error);',
+  '  }',
+  '};',
+  'fetchData();',
+  'class AdvancedCalculator {',
+  '  constructor() {',
+  '    this.operations = new Map();',
+  '  }',
+  '  performOperation(name, callback) {',
+  '    this.operations.set(name, callback);',
+  '  }',
+  '  calculate(name, ...args) {',
+  '    if (this.operations.has(name)) {',
+  '      const operation = this.operations.get(name);',
+  '      return operation(...args);',
+  '    } else {',
+  '      throw new Error("Operation not found!");',
+  '    }',
+  '  }',
+  '}',
+  'const advancedCalc = new AdvancedCalculator();',
+  'advancedCalc.performOperation("power", (base, exponent) => Math.pow(base, exponent));',
+  'const result = advancedCalc.calculate("power", 2, 3);',
+  'console.log("Result of 2^3:", result);',
+  'const asyncFunction = async () => {',
+  '  const result1 = await someAsyncOperation();',
+  '  const result2 = await anotherAsyncOperation(result1);',
+  '  console.log("Final Result:", result2);',
+  '};',
+  'const someAsyncOperation = () => new Promise((resolve) => setTimeout(() => resolve("Async Result 1"), 1000));',
+  'const anotherAsyncOperation = (data) => new Promise((resolve) => setTimeout(() => resolve(data + " + Async Result 2"), 1000));',
+  'asyncFunction();',
+  'const array = [1, 2, 3, 4, 5];',
+  'const doubledSum = array.reduce(async (acc, num) => {',
+  '  const currentSum = await acc;',
+  '  const doubledNum = await doubleAsync(num);',
+  '  return currentSum + doubledNum;',
+  '}, Promise.resolve(0));',
+  'console.log("Doubled Sum:", doubledSum);',
+  'const doubleAsync = (num) => new Promise((resolve) => setTimeout(() => resolve(num * 2), 500));',
+  'const delayedLog = (message, delay) => new Promise((resolve) => setTimeout(() => {',
+  '  console.log(message);',
+  '  resolve();',
+  '}, delay));',
+  'const runAsyncOperations = async () => {',
+  '  await delayedLog("Async Operation 1", 1000);',
+  '  await delayedLog("Async Operation 2", 500);',
+  '  console.log("Async Operations Complete!");',
+  '};',
+  'runAsyncOperations();',
+  'console.log("End of complex code!");',
+  // Add more lines as needed...
+];
+
+
+
+  let lineIndex = 0;
+  let charIndex = 0;
+
+  function displayText() {
+    const paragraph = document.createElement('p');
+    textContainer.appendChild(paragraph);
+
+    function displayCharacter() {
+      paragraph.textContent += lines[lineIndex][charIndex];
+      charIndex++;
+
+      if (charIndex < lines[lineIndex].length) {
+        setTimeout(displayCharacter, 1); // Adjust the timeout for desired speed
+      } else if (lineIndex < lines.length - 1) {
+        // Move to the next line
+        lineIndex++;
+        charIndex = 0;
+        setTimeout(displayText, 100); // Adjust the timeout between lines
+      }
+    }
+
+    displayCharacter();
+  }
+
+  displayText();
+});
+
+
+
+
             window.onload = function(){
                 setTimeout(function(){
                     document.getElementById('anuVideo').style.display = 'none';
                 }, 0);
-                setTimeout(function(){
-                    document.getElementById('codeImage').style.display = 'none';
-                    document.getElementById('anuVideo').style.display = 'block';
-                }, 3000);
+
             };
         </script>
     </body>
