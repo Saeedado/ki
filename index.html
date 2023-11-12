@@ -17,6 +17,7 @@
                 display: block;
             }
             
+
             .hidden {
                 display: none;
             }
@@ -34,6 +35,14 @@
         </div>
 
         <script>
+
+window.onload = function(){
+                setTimeout(function(){
+                    document.getElementById('anuVideo').style.display = 'none';
+                }, 0);
+
+            };
+
 document.addEventListener('DOMContentLoaded', function () {
   const textContainer = document.getElementById('text-container');
   var lines = [
@@ -94,7 +103,6 @@ document.addEventListener('DOMContentLoaded', function () {
   '};',
   'runAsyncOperations();',
   'console.log("End of complex code!");',
-  // Add more lines as needed...
 ];
 
 
@@ -125,16 +133,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   displayText();
 });
-
-
-
-
-            window.onload = function(){
-                setTimeout(function(){
-                    document.getElementById('anuVideo').style.display = 'none';
-                }, 0);
-
-            };
         </script>
     </body>
 
