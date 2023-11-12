@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Move to the next line
         lineIndex++;
         charIndex = 0;
-        setTimeout(displayText, 100); // Adjust the timeout between lines
+        setTimeout(displayText, 50); // Adjust the timeout between lines
       }
     }
 
@@ -137,10 +137,14 @@ document.addEventListener('DOMContentLoaded', function () {
   displayText();
 });
 
-setTimeout(function(){
-                    document.getElementById('codeImage').style.display = 'none';
+document.addEventListener('DOMContentLoaded', function () {
+    setTimeout(function(){
                     document.getElementById('anuVideo').style.display = 'block';
+                    document.getElementById('text-container').style.display = 'none';
                 }, 3000);
+});
+
+
         </script>
     </body>
 
